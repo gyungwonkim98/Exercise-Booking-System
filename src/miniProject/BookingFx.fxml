@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="550.0" prefWidth="800.0" style="-fx-background-color: #F6F6F6;" stylesheets="@Booking.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="miniProject.BookingController">
+   <children>
+      <AnchorPane fx:id="toolbarPane" layoutY="-1.0" prefHeight="102.0" prefWidth="800.0" style="-fx-background-color: #7C96C9;" styleClass="#A0BAED">
+         <children>
+            <ImageView fx:id="noticeIcon" fitHeight="52.0" fitWidth="52.0" layoutX="674.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/notice.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="homeIcon" fitHeight="52.0" fitWidth="52.0" layoutX="75.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/home.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="bookIcon" fitHeight="59.0" fitWidth="64.0" layoutX="277.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/calendar.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="checkIcon" fitHeight="52.0" fitWidth="52.0" layoutX="483.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/checking.png" />
+               </image>
+            </ImageView>
+            <Separator layoutX="197.0" layoutY="31.0" orientation="VERTICAL" prefHeight="45.0" />
+            <Separator layoutX="398.0" layoutY="31.0" orientation="VERTICAL" prefHeight="45.0" />
+            <Separator layoutX="605.0" layoutY="31.0" orientation="VERTICAL" prefHeight="45.0" />
+            <Label fx:id="homelb" alignment="CENTER" layoutX="24.0" layoutY="19.0" prefHeight="65.0" prefWidth="155.0" text="Home" textFill="#f2f2f5" underline="true" visible="false">
+               <font>
+                  <Font name="Arial Bold Italic" size="39.0" />
+               </font>
+            </Label>
+            <Label fx:id="booklb" alignment="CENTER" layoutX="237.0" layoutY="18.0" prefHeight="65.0" prefWidth="127.0" text="Book" textFill="#f2f2f5" underline="true" visible="false">
+               <font>
+                  <Font name="Arial Bold Italic" size="39.0" />
+               </font>
+            </Label>
+            <Label fx:id="checklb" alignment="CENTER" layoutX="402.0" layoutY="18.0" prefHeight="65.0" prefWidth="200.0" text="Check" textFill="#f2f2f5" underline="true" visible="false">
+               <font>
+                  <Font name="Arial Bold Italic" size="39.0" />
+               </font>
+            </Label>
+            <Label fx:id="noticelb" alignment="CENTER" layoutX="623.0" layoutY="18.0" prefHeight="65.0" prefWidth="155.0" text="Notice" textFill="#f2f2f5" underline="true" visible="false">
+               <font>
+                  <Font name="Arial Bold Italic" size="39.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="memberIcon" fitHeight="81.0" fitWidth="76.0" layoutX="465.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@image/members.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="noticePane" layoutY="120.0" prefHeight="430.0" prefWidth="800.0" style="-fx-background-color: #F6F6F6;">
+         <children>
+            <AnchorPane layoutX="460.0" layoutY="21.0" prefHeight="375.0" prefWidth="309.0" style="-fx-background-color: #BECBEB; -fx-background-radius: 15;">
+               <children>
+                  <Button fx:id="noticealterbtn" alignment="CENTER" contentDisplay="CENTER" disable="true" layoutX="65.0" layoutY="324.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="80.0" style="-fx-background-color: #E1E1E1; -fx-background-radius: 20;" text="수정" textFill="#514d4d">
+                     <font>
+                        <Font name="Hancom Gothic Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="noticetitletf" alignment="CENTER" layoutX="30.0" layoutY="24.0" prefHeight="35.0" prefWidth="147.0" promptText="제목" style="-fx-background-color: #F9F9F9; -fx-background-radius: 15;">
+                     <font>
+                        <Font name="Hancom Gothic Regular" size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextArea fx:id="noticecontentta" layoutX="30.0" layoutY="74.0" prefHeight="238.0" prefWidth="244.0" promptText="내용" style="-fx-background-color: transparent;">
+                     <font>
+                        <Font name="Hancom Gothic Regular" size="14.0" />
+                     </font>
+                  </TextArea>
+                  <Button fx:id="noticedeletebtn" alignment="CENTER" contentDisplay="CENTER" disable="true" layoutX="167.0" layoutY="324.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="80.0" style="-fx-background-color: #E1E1E1; -fx-background-radius: 20;" text="삭제" textFill="#514d4d">
+                     <font>
+                        <Font name="Hancom Gothic Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="noticenumlb" layoutX="267.0" layoutY="17.0" text="no" visible="false" />
+                  <Button fx:id="noticeinsertbtn" alignment="CENTER" contentDisplay="CENTER" layoutX="194.0" layoutY="24.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="80.0" style="-fx-background-color: #A0BAED; -fx-background-radius: 20;" text="추가" textFill="WHITE">
+                     <font>
+                        <Font name="Hancom Gothic Bold" size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <TableView fx:id="noticetv" layoutX="32.0" layoutY="24.0" onMouseClicked="#noticetvClick" onSort="#noticetvClick" prefHeight="313.0" prefWidth="409.0">
+              <columns>
+                <TableColumn fx:id="noticetvColumn1" editable="false" prefWidth="47.0" resizable="false" text="No" />
+                  <TableColumn fx:id="noticetvColumn2" editable="false" prefWidth="154.0" resizable="false" text="제목" />
+                  <TableColumn fx:id="noticetvColumn3" editable="false" minWidth="0.0" prefWidth="128.0" resizable="false" text="날짜" />
+                  <TableColumn fx:id="noticetvColumn4" editable="false" minWidth="6.0" prefWidth="71.0" resizable="false" text="조회" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="memberPane" layoutY="119.0" prefHeight="430.0" prefWidth="800.0" style="-fx-background-color: #F6F6F6;">
+         <children>
+            <TableView fx:id="membertv" editable="true" layoutX="44.0" layoutY="49.0" onMouseClicked="#membertvClick" prefHeight="268.0" prefWidth="590.0">
+              <columns>
+                <TableColumn fx:id="membertvColumn1" editable="false" prefWidth="81.0" resizable="false" text="No" />
+                <TableColumn fx:id="membertvColumn2" editable="false" prefWidth="91.0" resizable="false" text="이름" />
+                  <TableColumn fx:id="membertvColumn3" editable="false" prefWidth="177.0" resizable="false" text="휴대폰번호" />
+                  <TableColumn fx:id="membertvColumn4" editable="false" prefWidth="132.0" resizable="false" text="ID" />
+                  <TableColumn fx:id="membertvColumn5" prefWidth="100.0" resizable="false" text="총 횟수" />
+              </columns>
+            </TableView>
+            <Button fx:id="memberalterbtn" disable="true" layoutX="659.0" layoutY="331.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="80.0" style="-fx-background-color: #A0BAED; -fx-background-radius: 20;" text="저장" textFill="WHITE">
+               <font>
+                  <Font name="Hancom Gothic Bold" size="17.0" />
+               </font>
+            </Button>
+            <AnchorPane layoutX="57.0" layoutY="331.0" prefHeight="45.0" prefWidth="577.0" style="-fx-background-color: #f2f2f5; -fx-background-radius: 40;">
+               <children>
+                  <Label fx:id="membernolb" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="15.0" />
+                  <Label fx:id="membernamelb" alignment="CENTER" contentDisplay="CENTER" layoutX="114.0" layoutY="15.0" />
+                  <Label fx:id="memberphonelb" alignment="CENTER" contentDisplay="CENTER" layoutX="242.0" layoutY="15.0" />
+                  <Label fx:id="memberidlb" alignment="CENTER" contentDisplay="CENTER" layoutX="381.0" layoutY="15.0" />
+                  <TextField fx:id="membercounttf" disable="true" layoutX="490.0" layoutY="11.0" prefHeight="23.0" prefWidth="52.0" />
+               </children>
+            </AnchorPane>
+            <Label layoutX="673.0" layoutY="229.0" text="회원 수" textFill="#6e97e4">
+               <font>
+                  <Font name="Hancom Gothic Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="membertotallb" alignment="CENTER" contentDisplay="CENTER" layoutX="683.0" layoutY="254.0" prefHeight="32.0" prefWidth="32.0" text="00" textFill="#2755ab">
+               <font>
+                  <Font name="Hancom Gothic Bold" size="23.0" />
+               </font>
+            </Label>
+            <TextField fx:id="membernametf" layoutX="451.0" layoutY="14.0" prefHeight="23.0" prefWidth="106.0" promptText="회원이름 검색">
+               <font>
+                  <Font name="Hancom Gothic Regular" size="12.0" />
+               </font></TextField>
+            <Button fx:id="memberselectbtn" layoutX="565.0" layoutY="13.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="63.0" style="-fx-background-color: #A0BAED; -fx-background-radius: 20;" text="검색" textFill="WHITE">
+               <font>
+                  <Font name="Hancom Gothic Bold" size="11.0" />
+               </font>
+            </Button>
+            <Label fx:id="filesavelb" layoutX="47.0" layoutY="11.0" text="파일로 저장하기" textFill="#6e97e4" underline="true">
+               <font>
+                  <Font name="Hancom Gothic Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="membertvresetlb" layoutX="339.0" layoutY="14.0" text="전체 회원 보기" textFill="#6e97e4" underline="true">
+               <font>
+                  <Font name="Hancom Gothic Bold" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="classPane" layoutY="120.0" prefHeight="430.0" prefWidth="800.0" style="-fx-background-color: #F6F6F6;">
+         <children>
+            <ListView fx:id="classlv" layoutX="424.0" layoutY="51.0" onMouseClicked="#classDelClick" prefHeight="343.0" prefWidth="333.0" />
+            <DatePicker fx:id="classdp" layoutX="95.0" layoutY="38.0" prefHeight="35.0" prefWidth="244.0" promptText="예약하실 날짜를 선택하세요," />
+            <Label fx:id="classnoticelb" alignment="CENTER" contentDisplay="CENTER" layoutX="533.0" layoutY="200.0" text="날짜를 선택해주세요" textAlignment="CENTER" textFill="#3c3636">
+               <font>
+                  <Font name="Hancom Gothic Regular" size="14.0" />
+               </font>
+            </Label>
+            <AnchorPane fx:id="classinsertPane" disable="true" layoutX="71.0" layoutY="109.0" prefHeight="278.0" prefWidth="296.0" style="-fx-background-color: #e4ecfb; -fx-background-radius: 15;">
+               <children>
+                  <Label fx:id="noticenumlb1" layoutX="267.0" layoutY="17.0" text="no" visible="false" />
+                  <Label fx:id="datelb1111" alignment="CENTER" layoutX="2.0" layoutY="27.0" prefHeight="35.0" prefWidth="140.0" text="시간" textFill="#796868">
+                     <font>
+                        <Font name="Hancom Gothic Regular" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="datelb1111" alignment="CENTER" layoutX="1.0" layoutY="74.0" prefHeight="35.0" prefWidth="140.0" text="수업 내용" textFill="#796868">
+                     <font>
+                        <Font name="Hancom Gothic Regular" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutY="121.0" prefHeight="35.0" prefWidth="140.0" text="강사 이름" textFill="#796868">
+                     <font>
+                        <Font name="Hancom Gothic Regular" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="classteachertf" layoutX="123.0" layoutY="124.0" prefHeight="32.0" prefWidth="140.0" promptText="이승재" style="-fx-background-radius: 10;">
+                     <font>
+                        <Font name="Hancom Gothic Regular" size="14.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="classinsertbtn" alignment="CENTER" contentDisplay="CENTER" layoutX="192.0" layoutY="223.0" mnemonicParsing="false" onAction="#classInsertClick" prefHeight="36.0" prefWidth="80.0" style="-fx-background-color: #A0BAED; -fx-background-radius: 20;" text="추가" textFill="WHITE">
+                     <font>
+                        <Font name="Hancom Gothic Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <ComboBox fx:id="classtimecb" layoutX="123.0" layoutY="29.0" prefHeight="32.0" prefWidth="140.0" style="-fx-background-color: #F9F9F9; -fx-background-radius: 10;" stylesheets="@Booking.css">
+                  </ComboBox>
+                  <ComboBox fx:id="classcontentcb" layoutX="122.0" layoutY="76.0" prefHeight="32.0" prefWidth="140.0" style="-fx-background-color: #F9F9F9; -fx-background-radius: 10;" stylesheets="@Booking.css" />
+                  <ComboBox fx:id="classtotalcountcb" layoutX="123.0" layoutY="169.0" prefHeight="32.0" prefWidth="140.0" style="-fx-background-color: #F9F9F9; -fx-background-radius: 10;" stylesheets="@Booking.css" />
+                  <Label alignment="CENTER" layoutY="168.0" prefHeight="35.0" prefWidth="140.0" text="정원" textFill="#796868">
+                     <font>
+                        <Font name="Hancom Gothic Regular" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <TextField fx:id="classdatetf" alignment="CENTER" editable="false" layoutX="519.0" layoutY="13.0" prefHeight="35.0" prefWidth="147.0" promptText="날짜" style="-fx-background-color: #F9F9F9; -fx-background-radius: 15;">
+               <font>
+                  <Font name="Hancom Gothic Bold" size="14.0" />
+               </font>
+            </TextField>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="bookPane" layoutY="120.0" prefHeight="430.0" prefWidth="800.0" style="-fx-background-color: #F6F6F6;">
+         <children>
+            <ListView fx:id="booklv" layoutX="424.0" layoutY="51.0" onMouseClicked="#classDelClick" prefHeight="343.0" prefWidth="333.0" />
+            <DatePicker fx:id="bookdp" layoutX="95.0" layoutY="38.0" prefHeight="35.0" prefWidth="244.0" promptText="예약하실 날짜를 선택하세요," />
+            <Label fx:id="booknoticelb" alignment="CENTER" contentDisplay="CENTER" layoutX="533.0" layoutY="200.0" text="날짜를 선택해주세요" textAlignment="CENTER" textFill="#3c3636">
+               <font>
+                  <Font name="Hancom Gothic Regular" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="bookdatetf" alignment="CENTER" editable="false" layoutX="520.0" layoutY="11.0" prefHeight="35.0" prefWidth="147.0" promptText="날짜" style="-fx-background-color: #F9F9F9; -fx-background-radius: 15;">
+               <font>
+                  <Font name="Hancom Gothic Bold" size="14.0" />
+               </font>
+            </TextField>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="checkPane" layoutY="119.0" prefHeight="430.0" prefWidth="800.0" style="-fx-background-color: #F6F6F6;">
+         <children>
+            <TableView fx:id="checktv" editable="true" layoutX="54.0" layoutY="56.0" prefHeight="331.0" prefWidth="693.0">
+               <columns>
+                  <TableColumn fx:id="checktvColumn1" editable="false" prefWidth="84.0" resizable="false" text="No" />
+                  <TableColumn fx:id="checktvColumn2" editable="false" prefWidth="145.0" resizable="false" text="날짜" />
+                  <TableColumn fx:id="checktvColumn3" editable="false" prefWidth="157.0" resizable="false" text="수업" />
+                  <TableColumn fx:id="checktvColumn4" editable="false" prefWidth="198.0" resizable="false" text="시간" />
+                  <TableColumn fx:id="checktvColumn5" editable="false" minWidth="0.0" prefWidth="95.0" resizable="false" />
+               </columns>
+            </TableView>
+            <Label layoutX="615.0" layoutY="18.0" text="총 예약 수 " textFill="#6e97e4">
+               <font>
+                  <Font name="Hancom Gothic Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="checktotallb" alignment="CENTER" contentDisplay="CENTER" layoutX="700.0" layoutY="13.0" prefHeight="32.0" prefWidth="32.0" text="00" textFill="#2755ab">
+               <font>
+                  <Font name="Hancom Gothic Bold" size="23.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="homePane" layoutY="120.0" prefHeight="430.0" prefWidth="800.0" style="-fx-background-color: #7C96C9;">
+         <children>
+            <AnchorPane fx:id="signupPane" layoutX="196.0" prefHeight="430.0" prefWidth="604.0" style="-fx-background-color: #F6F6F6;" visible="false">
+               <children>
+                  <AnchorPane layoutX="70.0" layoutY="57.0" prefHeight="292.0" prefWidth="460.0" style="-fx-background-radius: 30; -fx-background-color: #f2f2f5;">
+                     <children>
+                        <TextField fx:id="signupnametf" layoutX="173.0" layoutY="14.0" prefHeight="32.0" prefWidth="155.0" style="-fx-background-radius: 10;">
+                           <font>
+                              <Font name="Hancom Gothic Regular" size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="signupphonetf" layoutX="173.0" layoutY="61.0" prefHeight="32.0" prefWidth="155.0" promptText="000-0000-0000" style="-fx-background-radius: 10;">
+                           <font>
+                              <Font name="Hancom Gothic Regular" size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="signupsmstf" disable="true" layoutX="173.0" layoutY="106.0" prefHeight="32.0" prefWidth="155.0" promptText="인증번호를 입력하세요" style="-fx-background-radius: 10;">
+                           <font>
+                              <Font name="Hancom Gothic Regular" size="13.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="signupidtf" disable="true" layoutX="173.0" layoutY="155.0" prefHeight="32.0" prefWidth="155.0" style="-fx-background-radius: 10;">
+                           <font>
+                              <Font name="Hancom Gothic Regular" size="14.0" />
+                           </font>
+                        </TextField>
+                        <PasswordField fx:id="signuppwpf" disable="true" layoutX="173.0" layoutY="201.0" prefHeight="32.0" prefWidth="155.0" style="-fx-background-radius: 10;">
+                           <font>
+                              <Font name="Hancom Gothic Regular" size="14.0" />
+                           </font>
+                        </PasswordField>
+                        <PasswordField fx:id="signuppwpf2" disable="true" layoutX="173.0" layoutY="247.0" prefHeight="32.0" prefWidth="155.0" style="-fx-background-radius: 10;">
+                           <font>
+                              <Font name="Hancom Gothic Regular" size="14.0" />
+                           </font>
+                        </PasswordField>
+                        <Label alignment="CENTER" layoutX="12.0" layoutY="153.0" prefHeight="35.0" prefWidth="140.0" text="ID">
+                           <font>
+                              <Font name="Hancom Gothic Regular" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="datelb11" alignment="CENTER" layoutX="12.0" layoutY="199.0" prefHeight="35.0" prefWidth="140.0" text="Password">
+                           <font>
+                              <Font name="Hancom Gothic Regular" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="datelb111" alignment="CENTER" layoutX="12.0" layoutY="245.0" prefHeight="35.0" prefWidth="140.0" text="Password 확인">
+                           <font>
+                              <Font name="Hancom Gothic Regular" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="12.0" layoutY="12.0" prefHeight="35.0" prefWidth="140.0" text="이름">
+                           <font>
+                              <Font name="Hancom Gothic Regular" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="12.0" layoutY="60.0" prefHeight="35.0" prefWidth="140.0" text="휴대폰번호">
+                           <font>
+                              <Font name="Hancom Gothic Regular" size="16.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="signupsendsmsbtn" alignment="CENTER" layoutX="339.0" layoutY="62.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="106.0" style="-fx-background-radius: 20; -fx-background-color: #A0BAED;" text="인증번호 받기" textFill="WHITE">
+                           <font>
+                              <Font name="Hancom Gothic Bold" size="13.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="signupsendsmsbtn2" alignment="CENTER" layoutX="339.0" layoutY="106.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="106.0" style="-fx-background-radius: 20; -fx-background-color: #A0BAED;" text="인증번호 확인" textFill="WHITE">
+                           <font>
+                              <Font name="Hancom Gothic Bold" size="13.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <Button fx:id="signupcancelbtn" alignment="CENTER" layoutX="355.0" layoutY="367.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="106.0" style="-fx-background-radius: 20; -fx-background-color: #E1E1E1;" text="Cancel" textFill="#5e5c5c">
+                     <font>
+                        <Font name="Arial" size="17.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="signupokbtn" alignment="CENTER" layoutX="469.0" layoutY="367.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="106.0" style="-fx-background-radius: 20; -fx-background-color: #A0BAED;" text="OK" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="17.0" />
+                     </font>
+                  </Button>
+                  <Label alignment="CENTER" layoutX="26.0" layoutY="9.0" prefHeight="35.0" prefWidth="127.0" text="Sign Up " textFill="#304772">
+                     <font>
+                        <Font name="Arial Bold Italic" size="27.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="loginokPane" layoutX="195.0" prefHeight="430.0" prefWidth="604.0" style="-fx-background-color: #F6F6F6;" visible="false">
+               <children>
+                  <Label layoutX="111.0" layoutY="140.0" text="환영합니다 ">
+                     <font>
+                        <Font name="Hancom Gothic Regular" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="loginidlb" layoutX="254.0" layoutY="131.0" text="000">
+                     <font>
+                        <Font name="Hancom Gothic Regular" size="30.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="41.0" layoutY="32.0" prefHeight="35.0" prefWidth="93.0" text="현재 시간">
+                     <font>
+                        <Font name="Hancom Gothic Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="logincountlb" layoutX="218.0" layoutY="205.0" text="000">
+                     <font>
+                        <Font name="Hancom Gothic Regular" size="30.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="logincountlb2" layoutX="331.0" layoutY="209.0" prefHeight="32.0" prefWidth="200.0" text="이용 가능하십니다.">
+                     <font>
+                        <Font name="Hancom Gothic Regular" size="20.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="logoutbtn" alignment="CENTER" layoutX="463.0" layoutY="350.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="106.0" style="-fx-background-radius: 20; -fx-background-color: #A0BAED;" text="logout" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="17.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="datelb" layoutX="145.0" layoutY="34.0" prefHeight="35.0" prefWidth="296.0" text="0000-00-00">
+                     <font>
+                        <Font name="Hancom Gothic Regular" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="adminloginlb" layoutX="464.0" layoutY="32.0" prefHeight="35.0" prefWidth="105.0" text="관리자모드" visible="false">
+                     <font>
+                        <Font name="Hancom Gothic Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="218.0" layoutY="303.0" text="즐거운 하루 되세요!">
+                     <font>
+                        <Font name="Hancom Gothic Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="loginPane" layoutX="196.0" prefHeight="430.0" prefWidth="604.0" style="-fx-background-color: #F6F6F6;">
+               <children>
+                  <TextField fx:id="idtf" layoutX="212.0" layoutY="151.0" prefHeight="35.0" prefWidth="200.0" promptText="    아이디" style="-fx-background-radius: 20;">
+                     <font>
+                        <Font name="Hancom Gothic Regular" size="17.0" />
+                     </font>
+                  </TextField>
+                  <PasswordField fx:id="pwpf" layoutX="212.0" layoutY="199.0" prefHeight="35.0" prefWidth="200.0" promptText="    비밀번호" style="-fx-background-radius: 20;">
+                     <font>
+                        <Font name="Hancom Gothic Regular" size="17.0" />
+                     </font>
+                  </PasswordField>
+                  <Button fx:id="loginbtn" alignment="CENTER" layoutX="316.0" layoutY="254.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="105.0" style="-fx-background-radius: 20; -fx-background-color: #A0BAED;" text="Login" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="17.0" />
+                     </font>
+                  </Button>
+                  <fx:define> <ToggleGroup fx:id="toggle" /> </fx:define>
+                  <RadioButton fx:id="memberbtn" layoutX="226.0" layoutY="110.0" mnemonicParsing="false" selected="true" text="회  원" userData="member">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="toggle" />
+                     </toggleGroup>
+                     <font>
+                        <Font name="Hancom Gothic Bold" size="15.0" />
+                     </font>
+                  </RadioButton>
+                  <ImageView fitHeight="35.0" fitWidth="32.0" layoutX="161.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/user.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="156.0" layoutY="203.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/password.png" />
+                     </image>
+                  </ImageView>
+                  <RadioButton fx:id="adminbtn" layoutX="318.0" layoutY="110.0" mnemonicParsing="false" text="관 리 자" toggleGroup="$toggle" userData="admin">
+                     <font>
+                        <Font name="Hancom Gothic Bold" size="15.0" />
+                     </font>
+                  </RadioButton>
+                  <Button fx:id="signupbtn" layoutX="201.0" layoutY="254.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="105.0" style="-fx-background-radius: 20; -fx-background-color: #E1E1E1;" text="Sign Up" textFill="#5e5c5c">
+                     <font>
+                        <Font name="Arial" size="17.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <ImageView fitHeight="133.0" fitWidth="149.0" layoutX="29.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/logo.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="33.0" layoutY="254.0" prefHeight="46.0" prefWidth="127.0" text="Pilates" textFill="#f2f2f5" underline="true">
+               <font>
+                  <Font name="Arial Bold Italic" size="39.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

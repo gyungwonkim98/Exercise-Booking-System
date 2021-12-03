@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="cellPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="81.0" prefWidth="303.0" style="-fx-background-color: #e6ecfb;" stylesheets="@Booking.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="classtimelb" layoutX="18.0" layoutY="6.0" prefHeight="20.0" prefWidth="96.0" text="시간" textFill="#2150dd">
+         <font>
+            <Font name="Hancom Gothic Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="classcontentlb" alignment="CENTER" layoutX="27.0" layoutY="30.0" text="운동내용">
+         <font>
+            <Font name="Hancom Gothic Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="classteacherlb" alignment="CENTER" layoutX="52.0" layoutY="56.0" text="김경원" textFill="#908d8d">
+         <font>
+            <Font name="Hancom Gothic Regular" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="classnowcountlb" layoutX="140.0" layoutY="53.0" text="0">
+         <font>
+            <Font name="Hancom Gothic Regular" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="classtotalcountlb" layoutX="181.0" layoutY="53.0" text="0">
+         <font>
+            <Font name="Hancom Gothic Regular" size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="classdelbtn" alignment="CENTER" contentDisplay="CENTER" layoutX="225.0" layoutY="16.0" mnemonicParsing="false" onAction="#classDelClick" prefHeight="49.0" prefWidth="62.0" text="삭제">
+         <font>
+            <Font name="Hancom Gothic Regular" size="14.0" />
+         </font>
+      </Button>
+      <Label alignment="CENTER" layoutX="4.0" layoutY="54.0" prefHeight="20.0" prefWidth="62.0" text="강사 :" textFill="#908d8d">
+         <font>
+            <Font name="Hancom Gothic Regular" size="12.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="148.0" layoutY="53.0" prefHeight="20.0" prefWidth="36.0" text="명  / " textFill="#908d8d">
+         <font>
+            <Font name="Hancom Gothic Regular" size="12.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="102.0" layoutY="53.0" prefHeight="22.0" prefWidth="34.0" text="예약 : " textFill="#908d8d">
+         <font>
+            <Font name="Hancom Gothic Regular" size="12.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="191.0" layoutY="52.0" prefHeight="20.0" prefWidth="23.0" text="명" textFill="#908d8d">
+         <font>
+            <Font name="Hancom Gothic Regular" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="classnumlb" layoutX="145.0" layoutY="19.0" text="수업번호" visible="false" />
+   </children>
+</AnchorPane>
